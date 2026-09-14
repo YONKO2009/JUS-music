@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 val newPipeExtractorRaw: Configuration by configurations.creating {
@@ -34,10 +35,6 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
-    }
-
     buildFeatures {
         compose = true
     }
