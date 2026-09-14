@@ -40,6 +40,13 @@ android {
     buildFeatures {
         compose = true
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
 }
 
 dependencies {
