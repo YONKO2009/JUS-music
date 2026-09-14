@@ -25,10 +25,6 @@ android {
     namespace = "com.jusmusic"
     compileSdk = 36
 
-    composeCompiler {
-        enableStrongSkippingMode = true
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -47,11 +43,11 @@ android {
 }
 
 dependencies {
-    implementation(platform("androidx.compose:compose-bom:2024.08.00"))
+    implementation(platform("androidx.compose:compose-bom:2024.09.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3:1.3.0")
+    implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
@@ -84,14 +80,3 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
-
-configurations.all {
-    resolutionStrategy {
-        force("androidx.compose.material3:material3:1.3.0")
-    }
-}
-configurations.all {
-      resolutionStrategy {
-          force("androidx.compose.material3:material3:1.3.0")
-      }
-  }
