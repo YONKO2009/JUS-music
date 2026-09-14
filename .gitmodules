@@ -1,0 +1,3 @@
+[submodule "BitChord"]
+	path = BitChord
+	url = https://github.com/YONKO2009/JUS-music.git
