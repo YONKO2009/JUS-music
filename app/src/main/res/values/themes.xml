@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.JUSMusic" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/jus_background</item>
+        <item name="android:textColorPrimary">@color/jus_text</item>
+        <item name="android:colorBackground">@color/jus_background</item>
+        <item name="android:colorForeground">@color/jus_text</item>
+    </style>
+</resources>
