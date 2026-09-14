@@ -18,7 +18,7 @@ jobs:
           java-version: 17
           distribution: 'temurin'
       - name: Build APK
-        run: ./gradlew assembleRelease
+        run: chmod +x gradlew && ./gradlew assembleRelease
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
