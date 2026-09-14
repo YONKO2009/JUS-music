@@ -36,6 +36,8 @@ android {
 
 dependencies {
     implementation("androidx.navigation:navigation-compose:2.8.5")
+    implementation("androidx.media3:media3-exoplayer:1.11.0")
+    implementation("androidx.media3:media3-common:1.11.0")
 
     // ---- Ktor + serialization (Task 1 Step 1) ----
     implementation("io.ktor:ktor-client-core:3.0.3")
