@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+import com.jusmusic.api.models.Track
+
 class JUSPlayerController(context: Context) {
 
     private val exoPlayer: ExoPlayer = ExoPlayer.Builder(context).build()
@@ -15,7 +17,20 @@ class JUSPlayerController(context: Context) {
     private val _isPlaying = MutableStateFlow(false)
     val isPlaying: StateFlow<Boolean> = _isPlaying.asStateFlow()
 
-    private val _currentTrack = MutableStateFlow<String?>(null)
+    private val _queue = MutableStateFlow<List<Track>>(emptyList())
+    val queue: StateFlow<List<Track>> = _queue.asStateFlow()
+
+    fun addToQueue(track: Track) {
+        _queue.value = _queue.value + track
+    }
+
+    fun removeAt(index: Int) {
+        val updated = _queue.value.toMutableList()
+        if (index in updated.indices) {
+            updated.removeAt(index)
+            _queue.value = updated
+        }
+    }
     val currentTrack: StateFlow<String?> = _currentTrack.asStateFlow()
 
     private val _playbackProgress = MutableStateFlow(0L)
