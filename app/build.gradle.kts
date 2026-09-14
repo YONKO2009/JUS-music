@@ -13,12 +13,11 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    buildFeatures {
-        compose = true
-        buildConfig = false
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+}
+
+dependencies {
+    implementation("androidx.navigation:navigation-compose:2.8.5")
 }

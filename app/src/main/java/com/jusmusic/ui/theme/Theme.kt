@@ -18,12 +18,15 @@ private val LightColorScheme = lightColorScheme(
     onSurface = NearBlack,
 )
 
+import androidx.compose.runtime.remember
+
 @Composable
 fun JUSTheme(
     content: @Composable () -> Unit
 ) {
-    MaterialTheme(
-        colorScheme = if (isSystemInDarkTheme()) darkColorScheme(
+    val isSystemInDarkTheme = isSystemInDarkTheme()
+    val colorScheme = remember(isSystemInDarkTheme) {
+        if (isSystemInDarkTheme) darkColorScheme(
             primary = NearBlack,
             onPrimary = White,
             secondary = GraySecondary,
@@ -32,7 +35,10 @@ fun JUSTheme(
             onBackground = White,
             surface = NearBlack,
             onSurface = White,
-        ) else LightColorScheme,
+        ) else LightColorScheme
+    }
+    MaterialTheme(
+        colorScheme = colorScheme,
         typography = JUSType,
         content = content
     )
