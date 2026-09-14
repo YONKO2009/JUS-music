@@ -80,3 +80,14 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
+
+configurations.all {
+    resolutionStrategy {
+        force("androidx.compose.material3:material3:1.3.0")
+    }
+}
+configurations.all {
+      resolutionStrategy {
+          force("androidx.compose.material3:material3:1.3.0")
+      }
+  }
