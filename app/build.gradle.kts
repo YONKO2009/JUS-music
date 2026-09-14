@@ -23,6 +23,11 @@ val newPipeExtractorStripped = tasks.register<org.gradle.api.tasks.bundling.Jar>
 android {
     namespace = "com.jusmusic"
     compileSdk = 36
+
+    composeCompiler {
+        enableStrongSkippingMode = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
