@@ -10,6 +10,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import android.content.Context
+import com.jusmusic.player.JUSPlayerController
 import com.jusmusic.navigation.JUSNavHost
 import com.jusmusic.ui.components.BottomTabBar
 import com.jusmusic.ui.components.MiniPlayer
@@ -18,16 +20,17 @@ import com.jusmusic.ui.theme.JUSTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val controller = JUSPlayerController(this)
         setContent {
             JUSTheme {
-                MainShell()
+                MainShell(controller)
             }
         }
     }
 }
 
 @Composable
-fun MainShell() {
+fun MainShell(controller: JUSPlayerController) {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { BottomTabBar() },
@@ -36,6 +39,7 @@ fun MainShell() {
         Box(modifier = Modifier.fillMaxSize()) {
             JUSNavHost(
                 navController = navController,
+                controller = controller,
                 modifier = Modifier.fillMaxSize()
             )
             Column(modifier = Modifier.fillMaxSize()) {

@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.jusmusic.player.JUSPlayerController
 import com.jusmusic.ui.screens.HomeScreen
 import com.jusmusic.ui.screens.SearchScreen
 import com.jusmusic.ui.screens.PlayerScreen
@@ -17,6 +18,7 @@ import com.jusmusic.ui.screens.LoginScreen
 @Composable
 fun JUSNavHost(
     navController: NavHostController,
+    controller: JUSPlayerController,
     modifier: Modifier = Modifier
 ) {
     NavHost(
@@ -28,7 +30,7 @@ fun JUSNavHost(
         composable("search") { SearchScreen() }
         composable("library") { LibraryScreen() }
         composable("liked") { LikedSongsScreen() }
-        composable("player") { PlayerScreen() }
+        composable("player") { PlayerScreen(controller = controller) }
         composable("queue") { QueueScreen() }
         composable("settings") { SettingsScreen() }
         composable("login") { LoginScreen() }
