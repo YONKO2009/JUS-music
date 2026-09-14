@@ -31,7 +31,7 @@ fun JUSNavHost(
         composable("library") { LibraryScreen() }
         composable("liked") { LikedSongsScreen() }
         composable("player") { PlayerScreen(controller = controller) }
-        composable("queue") { QueueScreen() }
+        composable("queue") { QueueScreen(controller = controller) }
         composable("settings") { SettingsScreen() }
         composable("login") { LoginScreen() }
     }

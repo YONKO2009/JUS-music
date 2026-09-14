@@ -31,6 +31,7 @@ class JUSPlayerController(context: Context) {
             _queue.value = updated
         }
     }
+    private val _currentTrack = MutableStateFlow<String?>(null)
     val currentTrack: StateFlow<String?> = _currentTrack.asStateFlow()
 
     private val _playbackProgress = MutableStateFlow(0L)

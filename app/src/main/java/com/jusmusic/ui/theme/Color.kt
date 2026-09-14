@@ -7,4 +7,10 @@ object JUSColors {
     val DeepBlack = Color(0xFF0A0A0A)
     val SecondaryGray = Color(0xFF6B7280)
     val InactiveLightGray = Color(0xFF9CA3AF)
+
+    val background = PureWhite
+    val onBackground = DeepBlack
+    val primary = DeepBlack
+    val secondary = SecondaryGray
+    val inactive = InactiveLightGray
 }

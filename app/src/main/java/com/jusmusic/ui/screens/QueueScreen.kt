@@ -26,7 +26,7 @@ fun QueueScreen(controller: JUSPlayerController) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             LazyColumn(modifier = Modifier.fillMaxSize().padding(16.dp)) {
                 itemsIndexed(queue) { index, track ->
-                    Box(modifier = Modifier.fillMaxSize().padding(8.dp)) {
+                    Box(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
                         Text(
                             text = "${track.title} - ${track.artist}",
                             style = JUSType.bodyMedium,
