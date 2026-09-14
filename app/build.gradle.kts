@@ -37,9 +37,19 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
+
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
+    implementation(platform("androidx.compose:compose-bom:2024.08.00"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+
     implementation("androidx.navigation:navigation-compose:2.8.5")
     implementation("androidx.media3:media3-exoplayer:1.11.0")
     implementation("androidx.media3:media3-common:1.11.0")
