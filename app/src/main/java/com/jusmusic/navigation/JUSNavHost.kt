@@ -5,6 +5,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.jusmusic.ui.screens.HomeScreen
+import com.jusmusic.ui.screens.SearchScreen
+import com.jusmusic.ui.screens.PlayerScreen
+import com.jusmusic.ui.screens.LibraryScreen
+import com.jusmusic.ui.screens.LikedSongsScreen
+import com.jusmusic.ui.screens.QueueScreen
+import com.jusmusic.ui.screens.SettingsScreen
+import com.jusmusic.ui.screens.LoginScreen
 
 @Composable
 fun JUSNavHost(
@@ -16,53 +24,13 @@ fun JUSNavHost(
         startDestination = "home",
         modifier = modifier
     ) {
-        composable("home") { HomePlaceholder() }
-        composable("search") { SearchPlaceholder() }
-        composable("library") { LibraryPlaceholder() }
-        composable("liked") { LikedPlaceholder() }
-        composable("player") { PlayerPlaceholder() }
-        composable("album") { AlbumPlaceholder() }
-        composable("artist") { ArtistPlaceholder() }
-        composable("playlist") { PlaylistPlaceholder() }
+        composable("home") { HomeScreen() }
+        composable("search") { SearchScreen() }
+        composable("library") { LibraryScreen() }
+        composable("liked") { LikedSongsScreen() }
+        composable("player") { PlayerScreen() }
+        composable("queue") { QueueScreen() }
+        composable("settings") { SettingsScreen() }
+        composable("login") { LoginScreen() }
     }
-}
-
-@Composable
-fun HomePlaceholder() {
-    androidx.compose.material3.Text("Home Screen")
-}
-
-@Composable
-fun SearchPlaceholder() {
-    androidx.compose.material3.Text("Search Screen")
-}
-
-@Composable
-fun LibraryPlaceholder() {
-    androidx.compose.material3.Text("Library Screen")
-}
-
-@Composable
-fun LikedPlaceholder() {
-    androidx.compose.material3.Text("Liked Screen")
-}
-
-@Composable
-fun PlayerPlaceholder() {
-    androidx.compose.material3.Text("Player Screen")
-}
-
-@Composable
-fun AlbumPlaceholder() {
-    androidx.compose.material3.Text("Album Screen")
-}
-
-@Composable
-fun ArtistPlaceholder() {
-    androidx.compose.material3.Text("Artist Screen")
-}
-
-@Composable
-fun PlaylistPlaceholder() {
-    androidx.compose.material3.Text("Playlist Screen")
 }
